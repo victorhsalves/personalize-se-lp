@@ -101,6 +101,15 @@ export const TESTIMONIALS = {
   ],
 } as const;
 
+export const LOCATION = {
+  city: "São Luís",
+  state: "Maranhão",
+  stateCode: "MA",
+  cityCode: "SLZ",
+  country: "Brasil",
+  countryCode: "BR",
+} as const;
+
 export const CONTACT = {
   title: "Entre em contato",
   description: "Solicite um orçamento ou tire suas dúvidas. Estamos prontos para transformar suas ideias em realidade!",

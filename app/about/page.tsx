@@ -1,8 +1,32 @@
+import type { Metadata } from "next";
 import { ABOUT, BRAND } from "@/lib/constants";
 import SectionTitle from "@/components/UI/SectionTitle";
 import Card from "@/components/UI/Card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://personalize-se.ilhasoftware.com";
+
+export const metadata: Metadata = {
+  title: "Sobre Nós",
+  description: "Somos uma marca de produtos personalizados em São Luís que une criatividade, qualidade e tecnologia para transformar itens comuns em peças únicas e cheias de personalidade.",
+  keywords: [
+    "sobre personalize-se",
+    "missão personalize-se",
+    "valores personalize-se",
+    "história personalize-se",
+    "personalize-se são luis",
+    "personalize-se slz",
+  ],
+  openGraph: {
+    title: "Sobre Nós | Personalize-se - São Luís",
+    description: "Somos uma marca de produtos personalizados em São Luís que une criatividade, qualidade e tecnologia para transformar itens comuns em peças únicas e cheias de personalidade.",
+    url: `${siteUrl}/about`,
+  },
+  alternates: {
+    canonical: `${siteUrl}/about`,
+  },
+};
 
 export default function AboutPage() {
   return (

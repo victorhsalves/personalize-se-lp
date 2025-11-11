@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://personalize-se.com/sitemap.xml
+

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { PRODUCTS, NAVIGATION } from "@/lib/constants";
 import SectionTitle from "@/components/UI/SectionTitle";
 import Card from "@/components/UI/Card";
@@ -5,6 +6,34 @@ import Button from "@/components/UI/Button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://personalize-se.ilhasoftware.com";
+
+export const metadata: Metadata = {
+  title: "Produtos",
+  description: "Transforme ideias em realidade com nossos produtos personalizados em São Luís. Canecas personalizadas, canecas corporativas e canecas temáticas com qualidade impecável.",
+  keywords: [
+    "canecas personalizadas",
+    "canecas corporativas",
+    "canecas temáticas",
+    "produtos personalizados",
+    "orçamento personalização",
+    "canecas personalizadas são luis",
+    "canecas personalizadas slz",
+    "produtos personalizados são luis",
+    "produtos personalizados slz",
+    "personalização são luis",
+    "personalização slz",
+  ],
+  openGraph: {
+    title: "Produtos | Personalize-se - São Luís",
+    description: "Transforme ideias em realidade com nossos produtos personalizados em São Luís. Canecas personalizadas, canecas corporativas e canecas temáticas com qualidade impecável.",
+    url: `${siteUrl}/products`,
+  },
+  alternates: {
+    canonical: `${siteUrl}/products`,
+  },
+};
 
 export default function ProductsPage() {
   return (
