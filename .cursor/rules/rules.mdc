@@ -1,0 +1,147 @@
+---
+alwaysApply: true
+---
+
+# 🎁 Projeto: Personalize-se
+
+## 💡 Visão geral
+
+A **Personalize-se** é uma marca de **produtos personalizados**, criada por **Victor Hugo Alves** e **Ana Beatriz Mendes**, que une **criatividade, qualidade e tecnologia** para transformar itens comuns — como **canecas, camisas e acessórios** — em **peças únicas e cheias de personalidade**.
+
+O propósito da marca é **fazer o cliente se sentir especial e autêntico**, entregando produtos que expressem **estilo, carinho e exclusividade**.  
+Cada detalhe importa — da arte ao acabamento e à embalagem.
+
+---
+
+## 🎯 Missão, visão e propósito
+
+- **Missão:** Criar produtos personalizados com qualidade impecável que transmitam autenticidade e emoção.  
+- **Visão:** Ser reconhecida como uma marca de referência em personalização criativa e tecnológica no Maranhão.  
+- **Propósito:** Tornar cada pessoa e marca única, através de produtos que contam histórias com arte e cuidado.
+
+---
+
+## 🎨 Identidade visual e estilo
+
+**Tom e estética:**
+- Mistura de **artesanato criativo** com **modernidade e tecnologia**  
+- **Calor humano + acabamento profissional**  
+- Paleta que reflete **suavidade, criatividade e autenticidade**
+
+**Sugestão de paleta:**
+- Fundo: bege claro / off-white (#F9F5F0)
+- Preto suave (#1E1E1E)
+- Acentos em tons terrosos e rosados (#C97A65, #B28D8B, #A66B5B)
+- Toques artesanais e orgânicos, sem excesso de brilho
+
+**Tipografia:**
+- Fonte primária: `Poppins` ou `Outfit`  
+- Fonte alternativa: `Playfair Display` (para títulos elegantes e artesanais)
+- Peso leve e espaçamento amplo para sensação de refinamento
+
+**Inspiração visual:**
+- Mistura entre o toque artístico da caligrafia da logo e o design limpo e tecnológico de uma loja online moderna.
+
+---
+
+## 🧩 Comunicação e tom de voz
+
+**Tom de voz:** leve, próximo e criativo.  
+A marca fala como uma pessoa real — empática, divertida e com paixão pelo que faz.
+
+**Estilo de linguagem:**
+- Moderna e humana (sem formalismos excessivos)
+- Pode usar expressões populares e memes com moderação
+- Transmitir **entusiasmo, carinho e atenção aos detalhes**
+
+**Exemplo:**
+> “Aqui, o presente é feito pra ser lembrado.  
+> Cada detalhe é pensado pra ser tão único quanto quem vai recebê-lo.”
+
+---
+
+## ⚙️ Stack técnica do projeto
+
+- **Framework:** Next.js (App Router)  
+- **Linguagem:** TypeScript  
+- **Estilização:** TailwindCSS  
+- **Animações:** Framer Motion  
+- **Boas práticas:**  
+  - Mobile-first  
+  - Código limpo e modular  
+  - Componentes reutilizáveis  
+  - Prettier + ESLint configurados  
+
+---
+
+## 📂 Estrutura recomendada do projeto
+
+src/
+├── app/
+│ ├── page.tsx # Landing Page principal
+│ ├── layout.tsx # Layout global
+│ ├── about/ # Sobre a marca
+│ ├── products/ # Catálogo de produtos personalizados
+│ ├── contact/ # Página de contato / orçamento
+│ └── preview/ # Futuro recurso de pré-visualização 3D
+├── components/
+│ ├── Header.tsx
+│ ├── Hero.tsx
+│ ├── About.tsx
+│ ├── ProductGrid.tsx
+│ ├── Testimonials.tsx
+│ ├── CTA.tsx
+│ ├── Footer.tsx
+│ └── UI/ # Componentes utilitários e visuais
+│ ├── Button.tsx
+│ ├── Card.tsx
+│ └── SectionTitle.tsx
+├── lib/
+│ └── constants.ts # textos fixos, links e cores
+├── styles/
+│ └── globals.css
+└── public/
+├── images/
+└── favicon.ico
+
+---
+
+## 🧱 Padrões para criação de componentes
+
+- Cada componente deve ser **autônomo e reutilizável**.  
+- Utilizar **Tailwind** para toda estilização.  
+- Usar **Framer Motion** para entradas sutis e interações suaves.  
+- Componentes nomeados em **PascalCase** (`HeroSection.tsx`, `ProductCard.tsx`).  
+- Evitar repetição de texto: centralizar strings em `lib/constants.ts`.  
+- Sempre priorizar **acessibilidade** (`alt`, `aria-label`, contraste de cor).
+
+**Exemplo de componente base:**
+```tsx
+"use client";
+import { motion } from "framer-motion";
+
+export default function Hero() {
+  return (
+    <section className="flex flex-col items-center justify-center py-24 px-6 bg-[#F9F5F0] text-center">
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-4xl md:text-6xl font-bold text-gray-900"
+      >
+        Presentes únicos, feitos com{" "}
+        <span className="text-[#C97A65]">personalidade</span>.
+      </motion.h1>
+      <p className="mt-4 text-gray-600 max-w-2xl">
+        Canecas, camisas e muito mais — cada detalhe pensado pra ser tão
+        especial quanto quem vai receber.
+      </p>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        className="mt-8 bg-[#C97A65] text-white px-8 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition"
+      >
+        Peça a sua
+      </motion.button>
+    </section>
+  );
+}
