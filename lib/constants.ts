@@ -64,14 +64,14 @@ export const PRODUCTS = {
     },
     {
       id: 2,
-      name: "Camisas Personalizadas",
-      description: "Camisas com estampas exclusivas e acabamento profissional.",
+      name: "Canecas Corporativas",
+      description: "Canecas com a logo da sua empresa ou evento.",
       image: "/images/products/shirt.jpg",
     },
     {
       id: 3,
-      name: "Acessórios",
-      description: "Diversos acessórios personalizados para todos os gostos.",
+      name: "Canecas Temáticas",
+      description: "Canecas com temas como filmes, séries, jogos, etc.",
       image: "/images/products/accessories.jpg",
     },
   ],
