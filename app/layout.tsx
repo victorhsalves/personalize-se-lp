@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -124,6 +125,18 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-RWCR20N6J2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RWCR20N6J2');
+          `}
+        </Script>
         <meta
           name="google-site-verification"
           content="pW86tmet3qg6W6xyBl72X8dii-JWiYyn-xg-RzvZ83k"
