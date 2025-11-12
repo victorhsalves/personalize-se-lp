@@ -38,7 +38,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           sameAs: [
             CONTACT.whatsapp,
             "https://instagram.com/personalize_se.slz",
-            "https://facebook.com/personalize-se",
+            // "https://facebook.com/personalize-se",
           ],
         };
 
@@ -105,7 +105,7 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           sameAs: [
             CONTACT.whatsapp,
             FOOTER.links.instagram,
-            FOOTER.links.facebook,
+            // FOOTER.links.facebook,
           ],
         };
 

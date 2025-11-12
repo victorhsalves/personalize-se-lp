@@ -49,7 +49,7 @@ export default function Footer() {
               >
                 Instagram
               </a>
-              <a
+              {/* <a
                 href={FOOTER.links.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -57,7 +57,7 @@ export default function Footer() {
                 aria-label="Facebook"
               >
                 Facebook
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

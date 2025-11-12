@@ -125,7 +125,7 @@ export const BUSINESS_HOURS = {
 export const CONTACT = {
   title: "Entre em contato",
   description: "Solicite um orçamento ou tire suas dúvidas. Estamos prontos para transformar suas ideias em realidade!",
-  email: "contato@personalize-se.com",
+  email: "personalize.se.studio@gmail.com",
   phone: "(98) 92002-1053",
   whatsapp: "https://wa.me/5598920021053?text=Ol%C3%A1!%20Vi%20os%20seus%20produtos%20no%20site%20e%20gostaria%20de%20conhecer%20mais",
 } as const;
@@ -134,7 +134,7 @@ export const FOOTER = {
   copyright: `© ${new Date().getFullYear()} ${BRAND.name}. Todos os direitos reservados.`,
   links: {
     instagram: "https://instagram.com/personalize_se.slz",
-    facebook: "https://facebook.com/personalize-se",
+    // facebook: "https://facebook.com/personalize-se",
   },
 } as const;
 
