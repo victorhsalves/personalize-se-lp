@@ -50,7 +50,7 @@ export default function ProductsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
               {PRODUCTS.items.map((product) => (
                 <Card key={product.id} className="overflow-hidden">
-                  <div className="relative h-64 bg-gray-200">
+                  <div className="relative h-64 bg-gray-200 flex items-center justify-center">
                     <Image
                       src={product.image}
                       alt={product.name}

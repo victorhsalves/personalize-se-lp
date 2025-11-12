@@ -23,6 +23,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  verification: {
+    google: "pW86tmet3qg6W6xyBl72X8dii-JWiYyn-xg-RzvZ83k",
+  },
+  other: {
+    "google-site-verification": "pW86tmet3qg6W6xyBl72X8dii-JWiYyn-xg-RzvZ83k",
+  },
 };
 
 export default function Home() {
