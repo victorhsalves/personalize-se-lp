@@ -108,6 +108,18 @@ export const LOCATION = {
   cityCode: "SLZ",
   country: "Brasil",
   countryCode: "BR",
+  coordinates: {
+    latitude: -2.5297,
+    longitude: -44.3028,
+  },
+} as const;
+
+export const BUSINESS_HOURS = {
+  weekdays: {
+    opens: "08:00",
+    closes: "18:00",
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+  },
 } as const;
 
 export const CONTACT = {

@@ -141,6 +141,10 @@ export default function RootLayout({
           name="google-site-verification"
           content="pW86tmet3qg6W6xyBl72X8dii-JWiYyn-xg-RzvZ83k"
         />
+        <meta name="geo.region" content="BR-MA" />
+        <meta name="geo.placename" content="São Luís" />
+        <meta name="geo.position" content="-2.5297;-44.3028" />
+        <meta name="ICBM" content="-2.5297, -44.3028" />
       </head>
       <body
         className={`${poppins.variable} ${playfairDisplay.variable} antialiased`}

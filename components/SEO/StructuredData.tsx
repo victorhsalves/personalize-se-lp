@@ -1,4 +1,4 @@
-import { BRAND, CONTACT, LOCATION } from "@/lib/constants";
+import { BRAND, CONTACT, LOCATION, BUSINESS_HOURS, FOOTER } from "@/lib/constants";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://personalize-se.ilhasoftware.com";
 
@@ -63,7 +63,9 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
         return {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
+          "@id": siteUrl,
           name: BRAND.name,
+          image: `${siteUrl}/android-chrome-512x512.png`,
           description: `${BRAND.mission} Localizada em ${LOCATION.city}, ${LOCATION.state}.`,
           url: siteUrl,
           telephone: CONTACT.phone,
@@ -86,10 +88,25 @@ export default function StructuredData({ type, data }: StructuredDataProps) {
           priceRange: "$$",
           geo: {
             "@type": "GeoCoordinates",
+            latitude: LOCATION.coordinates.latitude,
+            longitude: LOCATION.coordinates.longitude,
             addressLocality: LOCATION.city,
             addressRegion: LOCATION.stateCode,
             addressCountry: LOCATION.countryCode,
           },
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: BUSINESS_HOURS.weekdays.days,
+              opens: BUSINESS_HOURS.weekdays.opens,
+              closes: BUSINESS_HOURS.weekdays.closes,
+            },
+          ],
+          sameAs: [
+            CONTACT.whatsapp,
+            FOOTER.links.instagram,
+            FOOTER.links.facebook,
+          ],
         };
 
       case "Product":
