@@ -15,7 +15,8 @@ const playfairDisplay = Playfair_Display({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://personalize-se.ilhasoftware.com";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "http://personalize-se.ilhasoftware.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -23,7 +24,8 @@ export const metadata: Metadata = {
     default: "Personalize-se | Produtos Personalizados",
     template: "%s | Personalize-se",
   },
-  description: "Produtos personalizados em São Luís do Maranhão com qualidade impecável. Canecas, camisas e acessórios únicos feitos com criatividade e tecnologia.",
+  description:
+    "Produtos personalizados em São Luís do Maranhão com qualidade impecável. Canecas, camisas e acessórios únicos feitos com criatividade e tecnologia.",
   keywords: [
     "produtos personalizados",
     "canecas personalizadas",
@@ -58,7 +60,8 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "Personalize-se",
     title: "Personalize-se | Produtos Personalizados em São Luís",
-    description: "Produtos personalizados em São Luís do Maranhão com qualidade impecável. Canecas, camisas e acessórios únicos feitos com criatividade e tecnologia.",
+    description:
+      "Produtos personalizados em São Luís do Maranhão com qualidade impecável. Canecas, camisas e acessórios únicos feitos com criatividade e tecnologia.",
     images: [
       {
         url: "/android-chrome-512x512.png",
@@ -71,7 +74,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Personalize-se | Produtos Personalizados em São Luís",
-    description: "Produtos personalizados em São Luís do Maranhão com qualidade impecável. Canecas, camisas e acessórios únicos feitos com criatividade e tecnologia.",
+    description:
+      "Produtos personalizados em São Luís do Maranhão com qualidade impecável. Canecas, camisas e acessórios únicos feitos com criatividade e tecnologia.",
     images: ["/android-chrome-512x512.png"],
     creator: "@personalize_se",
   },
@@ -145,6 +149,8 @@ export default function RootLayout({
         <meta name="geo.placename" content="São Luís" />
         <meta name="geo.position" content="-2.5297;-44.3028" />
         <meta name="ICBM" content="-2.5297, -44.3028" />
+        <meta property="og:site_name" content="Personalize-se" />
+        <meta property="og:locale" content="pt_BR" />
       </head>
       <body
         className={`${poppins.variable} ${playfairDisplay.variable} antialiased`}
