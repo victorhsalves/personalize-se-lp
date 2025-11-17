@@ -4,9 +4,12 @@ export const BRAND = {
     name1: "Victor Hugo Alves",
     name2: "Ana Beatriz Mendes",
   },
-  mission: "Criar produtos personalizados com qualidade impecável que transmitam autenticidade e emoção.",
-  vision: "Ser reconhecida como uma marca de referência em personalização criativa e tecnológica no Maranhão.",
-  purpose: "Tornar cada pessoa e marca única, através de produtos que contam histórias com arte e cuidado.",
+  mission:
+    "Criar produtos personalizados com qualidade impecável que transmitam autenticidade e emoção.",
+  vision:
+    "Ser reconhecida como uma marca de referência em personalização criativa e tecnológica no Maranhão.",
+  purpose:
+    "Tornar cada pessoa e marca única, através de produtos que contam histórias com arte e cuidado.",
 } as const;
 
 export const COLORS = {
@@ -29,13 +32,15 @@ export const NAVIGATION = {
 export const HERO = {
   title: "Presentes únicos, feitos com",
   titleHighlight: "personalidade",
-  description: "Canecas, camisas e muito mais — cada detalhe pensado pra ser tão especial quanto quem vai receber.",
+  description:
+    "Canecas, camisas e muito mais — cada detalhe pensado pra ser tão especial quanto quem vai receber.",
   cta: "Peça a sua",
 } as const;
 
 export const ABOUT = {
   title: "Sobre a Personalize-se",
-  description: "Somos uma marca de produtos personalizados que une criatividade, qualidade e tecnologia para transformar itens comuns em peças únicas e cheias de personalidade.",
+  description:
+    "Somos uma marca de produtos personalizados que une criatividade, qualidade e tecnologia para transformar itens comuns em peças únicas e cheias de personalidade.",
   values: [
     {
       title: "Criatividade",
@@ -54,7 +59,8 @@ export const ABOUT = {
 
 export const PRODUCTS = {
   title: "Nossos Produtos",
-  description: "Transforme ideias em realidade com nossos produtos personalizados.",
+  description:
+    "Transforme ideias em realidade com nossos produtos personalizados.",
   items: [
     {
       id: 1,
@@ -82,20 +88,20 @@ export const TESTIMONIALS = {
   items: [
     {
       id: 1,
-      name: "Cliente Satisfeito",
-      text: "Produto incrível! Superou todas as expectativas.",
+      name: "Claudio Silveira",
+      text: "Empresa excelente, material de qualidade, super atenciosos e entregam o que prometem. Recomendo a todos. A melhor empresa de São Luís.",
       rating: 5,
     },
     {
       id: 2,
-      name: "Cliente Feliz",
-      text: "Qualidade impecável e atendimento excepcional.",
+      name: "Durvania Silva",
+      text: "Canecas lindas!!! Qualidade excelente.Recomendo.",
       rating: 5,
     },
     {
       id: 3,
-      name: "Cliente Encantado",
-      text: "Presente perfeito! Recebeu muitos elogios.",
+      name: "Adriana Campos",
+      text: "As canecas são de alta qualidade, entregaram no prazo, com embalagem lindíssima! Super recomendo.",
       rating: 5,
     },
   ],
@@ -124,17 +130,20 @@ export const BUSINESS_HOURS = {
 
 export const CONTACT = {
   title: "Entre em contato",
-  description: "Solicite um orçamento ou tire suas dúvidas. Estamos prontos para transformar suas ideias em realidade!",
+  description:
+    "Solicite um orçamento ou tire suas dúvidas. Estamos prontos para transformar suas ideias em realidade!",
   email: "personalize.se.studio@gmail.com",
   phone: "(98) 92002-1053",
-  whatsapp: "https://wa.me/5598920021053?text=Ol%C3%A1!%20Vi%20os%20seus%20produtos%20no%20site%20e%20gostaria%20de%20conhecer%20mais",
+  whatsapp:
+    "https://wa.me/5598920021053?text=Ol%C3%A1!%20Vi%20os%20seus%20produtos%20no%20site%20e%20gostaria%20de%20conhecer%20mais",
 } as const;
 
 export const FOOTER = {
-  copyright: `© ${new Date().getFullYear()} ${BRAND.name}. Todos os direitos reservados.`,
+  copyright: `© ${new Date().getFullYear()} ${
+    BRAND.name
+  }. Todos os direitos reservados.`,
   links: {
     instagram: "https://instagram.com/personalize_se.slz",
     // facebook: "https://facebook.com/personalize-se",
   },
 } as const;
-
