@@ -2,7 +2,33 @@ import { MetadataRoute } from "next";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://personalize-se.ilhasoftware.com";
 
+const PRODUCT_VIDEOS = [
+  {
+    path: "/products/product-video-2.mp4",
+    priority: 0.6,
+  },
+  {
+    path: "/products/product-video-3.mp4",
+    priority: 0.6,
+  },
+  {
+    path: "/products/product-video-4.mp4",
+    priority: 0.6,
+  },
+  {
+    path: "/products/product-video-5.mp4",
+    priority: 0.6,
+  },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
+  const videoEntries: MetadataRoute.Sitemap = PRODUCT_VIDEOS.map((video) => ({
+    url: `${siteUrl}${video.path}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: video.priority,
+  }));
+
   return [
     {
       url: siteUrl,
@@ -28,6 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    ...videoEntries,
   ];
 }
 

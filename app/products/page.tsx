@@ -5,6 +5,7 @@ import Card from "@/components/UI/Card";
 import Button from "@/components/UI/Button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ProductVideos from "@/components/ProductVideos";
 import Image from "next/image";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://personalize-se.ilhasoftware.com";
@@ -75,6 +76,8 @@ export default function ProductsPage() {
             </div>
           </div>
         </section>
+
+        <ProductVideos />
       </main>
       <Footer />
     </>
