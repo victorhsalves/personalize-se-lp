@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, FormEvent } from "react";
 import { CONTACT } from "@/lib/constants";
 import SectionTitle from "@/components/UI/SectionTitle";
 import Card from "@/components/UI/Card";
@@ -9,6 +9,20 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const whatsappMessage = `Olá! Me chamo ${name} e vim pelo site. ${message}. ${email}`;
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/5598920021053?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <>
       <Header />
@@ -60,7 +74,7 @@ export default function ContactPage() {
                 <h3 className="text-2xl font-bold text-[#1E1E1E] mb-4">
                   Envie sua Mensagem
                 </h3>
-                <form className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                       Nome
@@ -69,6 +83,8 @@ export default function ContactPage() {
                       type="text"
                       id="name"
                       name="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C97A65] focus:border-transparent"
                     />
@@ -81,6 +97,8 @@ export default function ContactPage() {
                       type="email"
                       id="email"
                       name="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C97A65] focus:border-transparent"
                     />
@@ -93,6 +111,8 @@ export default function ContactPage() {
                       id="message"
                       name="message"
                       rows={5}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                       required
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C97A65] focus:border-transparent"
                     />
