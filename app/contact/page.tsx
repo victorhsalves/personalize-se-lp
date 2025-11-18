@@ -13,14 +13,31 @@ export default function ContactPage() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const trackConversion = () => {
+    // Disparar evento de conversão do Google Ads
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+      (window as any).gtag("event", "conversion", {
+        send_to: "AW-17725341926/zszPCOzmxMIbEOaBjYRC",
+      });
+    }
+  };
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    trackConversion();
 
     const whatsappMessage = `Olá! Me chamo ${name} e vim pelo site. ${message}. ${email}`;
     const encodedMessage = encodeURIComponent(whatsappMessage);
     const whatsappUrl = `https://wa.me/5598920021053?text=${encodedMessage}`;
 
     window.open(whatsappUrl, "_blank");
+  };
+
+  const handleWhatsAppClick = () => {
+    trackConversion();
   };
 
   return (
@@ -63,6 +80,7 @@ export default function ContactPage() {
                       href={CONTACT.whatsapp}
                       variant="primary"
                       className="w-full"
+                      onClick={handleWhatsAppClick}
                     >
                       Falar no WhatsApp
                     </Button>
@@ -76,7 +94,10 @@ export default function ContactPage() {
                 </h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Nome
                     </label>
                     <input
@@ -90,7 +111,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Email
                     </label>
                     <input
@@ -104,7 +128,10 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
                       Mensagem
                     </label>
                     <textarea
@@ -130,4 +157,3 @@ export default function ContactPage() {
     </>
   );
 }
-
