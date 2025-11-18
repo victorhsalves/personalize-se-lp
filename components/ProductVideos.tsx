@@ -7,23 +7,33 @@ import SectionTitle from "./UI/SectionTitle";
 const VIDEOS = [
   {
     id: 1,
+    src: "/products/product-video-1.mp4",
+    title: "Entrega Personalizada 1",
+  },
+  {
+    id: 2,
     src: "/products/product-video-2.mp4",
     title: "Entrega Personalizada 2",
   },
   {
-    id: 2,
+    id: 3,
     src: "/products/product-video-3.mp4",
     title: "Entrega Personalizada 3",
   },
   {
-    id: 3,
+    id: 4,
     src: "/products/product-video-4.mp4",
     title: "Entrega Personalizada 4",
   },
   {
-    id: 4,
+    id: 5,
     src: "/products/product-video-5.mp4",
     title: "Entrega Personalizada 5",
+  },
+  {
+    id: 6,
+    src: "/products/product-video-6.mp4",
+    title: "Entrega Personalizada 6",
   },
 ];
 
