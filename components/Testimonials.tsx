@@ -69,7 +69,7 @@ export default function Testimonials() {
             onClick={handleGoogleStoreClick}
             className="inline-flex items-center gap-2 text-[#C97A65] hover:text-[#A66B5B] font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
           >
-            Ver mais feedbacks e informações na nossa loja no Google
+            Veja mais feedbacks e informações da nossa loja no Google
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"

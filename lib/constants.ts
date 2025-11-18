@@ -138,6 +138,13 @@ export const CONTACT = {
     "https://wa.me/5598920021053?text=Ol%C3%A1!%20Vi%20os%20seus%20produtos%20no%20site%20e%20gostaria%20de%20conhecer%20mais",
 } as const;
 
+export const INSTAGRAM = {
+  title: "Conheça mais do nosso trabalho",
+  description: "Acompanhe nosso Instagram e confira todos os produtos personalizados que já entregamos aos nossos clientes.",
+  cta: "Seguir no Instagram",
+  url: "https://instagram.com/personalize_se.slz",
+} as const;
+
 export const FOOTER = {
   copyright: `© ${new Date().getFullYear()} ${
     BRAND.name

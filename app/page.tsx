@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ProductGrid from "@/components/ProductGrid";
 import ProductVideos from "@/components/ProductVideos";
+import InstagramCTA from "@/components/InstagramCTA";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -44,6 +45,7 @@ export default function Home() {
         <About />
         <ProductGrid />
         <ProductVideos />
+        <InstagramCTA />
         <Testimonials />
         <CTA />
       </main>

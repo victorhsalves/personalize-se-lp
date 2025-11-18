@@ -9,6 +9,8 @@ interface ButtonProps {
   size?: "sm" | "md" | "lg";
   onClick?: () => void;
   href?: string;
+  target?: string;
+  rel?: string;
   className?: string;
   type?: "button" | "submit" | "reset";
 }
@@ -19,6 +21,8 @@ export default function Button({
   size = "md",
   onClick,
   href,
+  target,
+  rel,
   className = "",
   type = "button",
 }: ButtonProps) {
@@ -54,6 +58,8 @@ export default function Button({
     return (
       <motion.a
         href={href}
+        target={target}
+        rel={rel}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className={buttonClasses}
