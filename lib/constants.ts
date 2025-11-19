@@ -33,8 +33,8 @@ export const HERO = {
   title: "Presentes únicos, feitos com",
   titleHighlight: "personalidade",
   description:
-    "Canecas e xícaras personalizadas — cada detalhe pensado pra ser tão especial quanto quem vai receber.",
-  cta: "Peça a sua",
+    "Canecas personalizadas — cada detalhe pensado para ser tão especial quanto quem vai receber.",
+  cta: "Peça a sua!",
 } as const;
 
 export const ABOUT = {
