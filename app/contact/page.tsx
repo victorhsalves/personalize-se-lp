@@ -7,11 +7,16 @@ import Card from "@/components/UI/Card";
 import Button from "@/components/UI/Button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useToast } from "@/components/UI/Toast";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [catalogWhatsapp, setCatalogWhatsapp] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isRequestingCatalog, setIsRequestingCatalog] = useState(false);
+  const { showToast } = useToast();
 
   const trackConversion = () => {
     // Disparar evento de conversão do Google Ads
@@ -24,20 +29,84 @@ export default function ContactPage() {
     }
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    trackConversion();
+    setIsSubmitting(true);
 
-    const whatsappMessage = `Olá! Me chamo ${name} e vim pelo site. ${message}. ${email}`;
-    const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/5598920021053?text=${encodedMessage}`;
+    try {
+      // Salvar no Google Sheets
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome: name,
+          email: email,
+          mensagem: message,
+        }),
+      });
 
-    window.open(whatsappUrl, "_blank");
+      if (!response.ok) {
+        throw new Error("Erro ao salvar dados");
+      }
+
+      trackConversion();
+
+      // Limpar formulário
+      setName("");
+      setEmail("");
+      setMessage("");
+      
+      showToast("Mensagem enviada com sucesso! Entraremos em contato em breve.", "success");
+    } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      showToast("Erro ao enviar mensagem. Tente novamente.", "error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleWhatsAppClick = () => {
     trackConversion();
+  };
+
+  const handleCatalogRequest = async () => {
+    if (!catalogWhatsapp.trim()) {
+      return;
+    }
+
+    setIsRequestingCatalog(true);
+
+    try {
+      // Salvar no Google Sheets
+      const response = await fetch("/api/catalog", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          whatsapp: catalogWhatsapp,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao salvar dados");
+      }
+
+      trackConversion();
+
+      // Limpar campo
+      setCatalogWhatsapp("");
+      
+      showToast("Solicitação enviada com sucesso! Entraremos em contato em breve.", "success");
+    } catch (error) {
+      console.error("Erro ao solicitar catálogo:", error);
+      showToast("Erro ao solicitar catálogo. Tente novamente.", "error");
+    } finally {
+      setIsRequestingCatalog(false);
+    }
   };
 
   return (
@@ -56,7 +125,7 @@ export default function ContactPage() {
                 <h3 className="text-2xl font-bold text-[#1E1E1E] mb-4">
                   Informações de Contato
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-4 w-full">
                   <div>
                     <p className="text-sm text-gray-500 mb-1">Email</p>
                     <a
@@ -75,7 +144,7 @@ export default function ContactPage() {
                       {CONTACT.phone}
                     </a>
                   </div>
-                  <div className="pt-4">
+                  <div className="w-full">
                     <Button
                       href={CONTACT.whatsapp}
                       variant="primary"
@@ -84,6 +153,31 @@ export default function ContactPage() {
                     >
                       Falar no WhatsApp
                     </Button>
+                  </div>
+                  <div className="pt-4 border-t border-gray-200">
+                    <p className="text-sm text-gray-600 mb-3 text-center">
+                      Ou receba nosso catálogo completo + tabela de preços via WhatsApp
+                    </p>
+                    <div className="space-y-3">
+                      <input
+                        type="tel"
+                        id="catalog-whatsapp"
+                        name="catalog-whatsapp"
+                        value={catalogWhatsapp}
+                        onChange={(e) => setCatalogWhatsapp(e.target.value)}
+                        placeholder="(98) 99999-9999"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C97A65] focus:border-transparent"
+                      />
+                      <Button
+                        type="button"
+                        variant="secondary"
+                        className="w-full"
+                        onClick={handleCatalogRequest}
+                        disabled={!catalogWhatsapp.trim() || isRequestingCatalog}
+                      >
+                        {isRequestingCatalog ? "Enviando..." : "Receber Catálogo"}
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </Card>
@@ -144,8 +238,13 @@ export default function ContactPage() {
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C97A65] focus:border-transparent"
                     />
                   </div>
-                  <Button type="submit" variant="primary" className="w-full">
-                    Enviar Mensagem
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    className="w-full"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
                   </Button>
                 </form>
               </Card>

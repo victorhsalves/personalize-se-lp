@@ -15,7 +15,7 @@ export default function Card({ children, className = "", hover = true }: CardPro
   if (hover) {
     return (
       <motion.div
-        whileHover={{ y: -4 }}
+        whileHover={{ y: 0 }}
         transition={{ duration: 0.2 }}
         className={`${baseStyles} hover:shadow-lg transition-shadow ${className}`}
       >

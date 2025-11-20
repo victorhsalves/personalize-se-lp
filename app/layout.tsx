@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Playfair_Display } from "next/font/google";
 import Script from "next/script";
+import { ToastProvider } from "@/components/UI/Toast";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -167,7 +168,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${playfairDisplay.variable} antialiased`}
       >
-        {children}
+        <ToastProvider>{children}</ToastProvider>
       </body>
     </html>
   );
