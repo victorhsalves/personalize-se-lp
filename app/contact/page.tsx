@@ -18,13 +18,30 @@ export default function ContactPage() {
   const [isRequestingCatalog, setIsRequestingCatalog] = useState(false);
   const { showToast } = useToast();
 
-  const trackConversion = () => {
-    // Disparar evento de conversão do Google Ads
+  const formatPhoneNumber = (value: string) => {
+    const numbers = value.replace(/\D/g, "");
+    const limitedNumbers = numbers.slice(0, 11);
+    if (limitedNumbers.length <= 2) {
+      return limitedNumbers;
+    } else if (limitedNumbers.length <= 7) {
+      return `(${limitedNumbers.slice(0, 2)}) ${limitedNumbers.slice(2)}`;
+    } else {
+      return `(${limitedNumbers.slice(0, 2)}) ${limitedNumbers.slice(2, 7)}-${limitedNumbers.slice(7)}`;
+    }
+  };
+
+  const trackConversion = (action: string = "contact") => {
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     if (typeof window !== "undefined" && (window as any).gtag) {
       /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
       (window as any).gtag("event", "conversion", {
         send_to: "AW-17725341926/zszPCOzmxMIbEOaBjYRC",
+      });
+      /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+      (window as any).gtag("event", "conversion", {
+        event_category: "engagement",
+        event_label: action,
+        value: 1,
       });
     }
   };
@@ -35,7 +52,6 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // Salvar no Google Sheets
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -52,9 +68,8 @@ export default function ContactPage() {
         throw new Error("Erro ao salvar dados");
       }
 
-      trackConversion();
+      trackConversion("form_submit");
 
-      // Limpar formulário
       setName("");
       setEmail("");
       setMessage("");
@@ -69,7 +84,7 @@ export default function ContactPage() {
   };
 
   const handleWhatsAppClick = () => {
-    trackConversion();
+    trackConversion("whatsapp_click");
   };
 
   const handleCatalogRequest = async () => {
@@ -80,7 +95,6 @@ export default function ContactPage() {
     setIsRequestingCatalog(true);
 
     try {
-      // Salvar no Google Sheets
       const response = await fetch("/api/catalog", {
         method: "POST",
         headers: {
@@ -95,9 +109,8 @@ export default function ContactPage() {
         throw new Error("Erro ao salvar dados");
       }
 
-      trackConversion();
+      trackConversion("catalog_request");
 
-      // Limpar campo
       setCatalogWhatsapp("");
       
       showToast("Solicitação enviada com sucesso! Entraremos em contato em breve.", "success");
@@ -164,8 +177,9 @@ export default function ContactPage() {
                         id="catalog-whatsapp"
                         name="catalog-whatsapp"
                         value={catalogWhatsapp}
-                        onChange={(e) => setCatalogWhatsapp(e.target.value)}
+                        onChange={(e) => setCatalogWhatsapp(formatPhoneNumber(e.target.value))}
                         placeholder="(98) 99999-9999"
+                        maxLength={15}
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C97A65] focus:border-transparent"
                       />
                       <Button
