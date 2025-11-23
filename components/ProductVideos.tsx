@@ -35,6 +35,21 @@ const VIDEOS = [
     src: "/products/product-video-6.mp4",
     title: "Entrega Personalizada 6",
   },
+  {
+    id: 7,
+    src: "/products/product-video-7.mp4",
+    title: "Entrega Personalizada 7",
+  },
+  {
+    id: 8,
+    src: "/products/product-video-8.mp4",
+    title: "Entrega Personalizada 8",
+  },
+  {
+    id: 9,
+    src: "/products/product-video-9.mp4",
+    title: "Entrega Personalizada 9",
+  },
 ];
 
 export default function ProductVideos() {
