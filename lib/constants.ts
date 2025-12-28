@@ -66,19 +66,19 @@ export const PRODUCTS = {
       id: 1,
       name: "Canecas Personalizadas",
       description: "Canecas de alta qualidade com sua arte ou mensagem única.",
-      image: "/images/products/custom.jpeg",
+      image: "/images/products/cust.jpg",
     },
     {
       id: 2,
       name: "Canecas Corporativas",
       description: "Canecas com a logo da sua empresa ou evento.",
-      image: "/images/products/corporative.jpeg",
+      image: "/images/products/corp.jpeg",
     },
     {
       id: 3,
       name: "Canecas Temáticas",
       description: "Canecas com temas como filmes, séries, jogos, etc.",
-      image: "/images/products/tematic.jpeg",
+      image: "/images/products/tem.jpg",
     },
   ],
 } as const;

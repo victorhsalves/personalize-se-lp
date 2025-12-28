@@ -6,6 +6,7 @@ import Button from "@/components/UI/Button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductVideos from "@/components/ProductVideos";
+import ProductCard from "@/components/ProductCard";
 import Image from "next/image";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://personalize-se.ilhasoftware.com";
@@ -72,6 +73,35 @@ export default function ProductsPage() {
                     </Button>
                   </div>
                 </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 px-6 bg-[#F9F5F0]">
+          <div className="container mx-auto max-w-6xl">
+            <SectionTitle
+              title="Galeria de Produtos"
+              subtitle="Confira alguns dos nossos trabalhos personalizados"
+            />
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mt-12">
+              {[
+                { src: "/images/all-products/1.jpeg", alt: "Produto personalizado 1" },
+                { src: "/images/all-products/2.jpg", alt: "Produto personalizado 2" },
+                { src: "/images/all-products/3.jpeg", alt: "Produto personalizado 3" },
+                { src: "/images/all-products/4.jpg", alt: "Produto personalizado 4" },
+                { src: "/images/all-products/5.jpg", alt: "Produto personalizado 5" },
+                { src: "/images/all-products/6.jpg", alt: "Produto personalizado 6" },
+                { src: "/images/all-products/7.jpeg", alt: "Produto personalizado 7" },
+                { src: "/images/all-products/8.jpg", alt: "Produto personalizado 8" },
+                { src: "/images/all-products/9.jpg", alt: "Produto personalizado 9" },
+              ].map((product, index) => (
+                <ProductCard
+                  key={index}
+                  image={product.src}
+                  alt={product.alt}
+                />
               ))}
             </div>
           </div>

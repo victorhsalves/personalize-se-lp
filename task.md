@@ -1,0 +1,1 @@
+crie um componente para mostrar o produto, ele deve ser um quadrado contendo uma imagem 1:1 com bordas arredondadas, adicione a seção na página de produtos
