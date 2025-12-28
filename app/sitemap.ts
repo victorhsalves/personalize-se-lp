@@ -4,6 +4,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://personalize-se.ilhas
 
 const PRODUCT_VIDEOS = [
   {
+    path: "/products/product-video-1.mp4",
+    priority: 0.6,
+  },
+  {
     path: "/products/product-video-2.mp4",
     priority: 0.6,
   },
@@ -17,6 +21,22 @@ const PRODUCT_VIDEOS = [
   },
   {
     path: "/products/product-video-5.mp4",
+    priority: 0.6,
+  },
+  {
+    path: "/products/product-video-6.mp4",
+    priority: 0.6,
+  },
+  {
+    path: "/products/product-video-7.mp4",
+    priority: 0.6,
+  },
+  {
+    path: "/products/product-video-8.mp4",
+    priority: 0.6,
+  },
+  {
+    path: "/products/product-video-9.mp4",
     priority: 0.6,
   },
 ];
