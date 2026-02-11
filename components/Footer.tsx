@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FOOTER, NAVIGATION } from "@/lib/constants";
+import { FOOTER, NAVIGATION, CONTACT } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -11,9 +11,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-2xl font-bold mb-4">Personalize-se</h3>
-            <p className="text-gray-400">
-              Produtos personalizados com qualidade e criatividade.
+            <p className="text-gray-400 mb-4">
+              {FOOTER.description}
             </p>
+            <div className="space-y-2 text-gray-400">
+              <p>Email: {CONTACT.email}</p>
+              <p>Telefone: {CONTACT.phone}</p>
+              <a
+                href={CONTACT.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#C97A65] hover:text-white transition-colors inline-block"
+              >
+                WhatsApp direto
+              </a>
+            </div>
           </div>
 
           <div>

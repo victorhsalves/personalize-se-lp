@@ -14,7 +14,6 @@ export default function ProductGrid() {
       <div className="container mx-auto max-w-6xl">
         <SectionTitle
           title={PRODUCTS.title}
-          subtitle={PRODUCTS.description}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
@@ -44,7 +43,7 @@ export default function ProductGrid() {
                     {product.description}
                   </p>
                   <Button href={NAVIGATION.contact} size="sm" variant="outline" className="w-full">
-                    Solicitar Orçamento
+                    {PRODUCTS.cta}
                   </Button>
                 </div>
               </Card>

@@ -74,7 +74,7 @@ export default function AboutPage() {
                 Nossos Valores
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {ABOUT.values.map((value) => (
+                {ABOUT.values.map((value: { title: string; description: string }) => (
                   <Card key={value.title} className="p-6 text-center">
                     <h4 className="text-xl font-bold text-[#1E1E1E] mb-3">
                       {value.title}

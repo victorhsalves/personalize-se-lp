@@ -46,7 +46,7 @@ export default function ProductsPage() {
           <div className="container mx-auto max-w-6xl">
             <SectionTitle
               title={PRODUCTS.title}
-              subtitle={PRODUCTS.description}
+              subtitle="Transforme ideias em realidade com nossos produtos personalizados."
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
@@ -69,7 +69,7 @@ export default function ProductsPage() {
                       {product.description}
                     </p>
                     <Button href={NAVIGATION.contact} size="sm" variant="outline" className="w-full">
-                      Solicitar Orçamento
+                      {PRODUCTS.cta}
                     </Button>
                   </div>
                 </Card>

@@ -30,11 +30,16 @@ export const NAVIGATION = {
 } as const;
 
 export const HERO = {
-  title: "Presentes únicos, feitos com",
-  titleHighlight: "personalidade",
-  description:
-    "Canecas personalizadas — cada detalhe pensado para ser tão especial quanto quem vai receber.",
-  cta: "Peça a sua!",
+  title: "Transformamos sua ideia em uma",
+  titleHighlight: "caneca perfeita",
+  description: "Mesmo que você não tenha arte, nós criamos gratuitamente.",
+  description2: "Você só paga depois de aprovar.",
+  benefits: [
+    "Entrega grátis",
+    "Produção rápida (até 48h, normalmente 24h)",
+    "Orçamento sem compromisso",
+  ],
+  cta: "Quero meu orçamento gratuito",
 } as const;
 
 export const ABOUT = {
@@ -57,34 +62,97 @@ export const ABOUT = {
   ],
 } as const;
 
+export const WHY_CHOOSE = {
+  title: "Por que escolher a Personalize-se?",
+  painPoints: [
+    "Arte mal feita",
+    "Impressão desbotada",
+    "Prazo que não é cumprido",
+    "Atendimento demorado",
+  ],
+  solution: "Na Personalize-se é diferente.",
+  solutionDescription: "Produzimos sua caneca somente após sua aprovação.",
+  solutionDescription2: "Sem risco. Sem surpresa. Sem dor de cabeça.",
+} as const;
+
+export const HOW_IT_WORKS = {
+  title: "Como Funciona",
+  steps: [
+    {
+      number: 1,
+      title: "Você envia sua ideia",
+      description: "Não tem arte? Criamos gratuitamente.",
+    },
+    {
+      number: 2,
+      title: "Enviamos a arte para aprovação",
+      description: "Você só aprova quando estiver 100% satisfeito.",
+    },
+    {
+      number: 3,
+      title: "Produção rápida",
+      description: "Produzimos em até 48h (na maioria dos casos, 24h).",
+    },
+    {
+      number: 4,
+      title: "Entrega grátis",
+      description: "Atendemos toda a ilha de São Luís.",
+    },
+  ],
+  conclusion: "Simples. Rápido. Seguro.",
+} as const;
+
+export const QUALITY = {
+  title: "Qualidade Profissional de Verdade",
+  description: "Utilizamos os melhores insumos do mercado:",
+  features: [
+    "Canecas de qualidade",
+    "Impressão de alta definição",
+    "Cores vibrantes",
+    "Alta durabilidade",
+    "Acabamento focado na perfeição",
+    "Embalagem especial",
+  ],
+  conclusion: "Nosso foco não é apenas imprimir.",
+  conclusion2: "É entregar algo impecável.",
+} as const;
+
+export const PRICING = {
+  title: "Preço Transparente",
+  priceFrom: "Canecas a partir de R$ 40,00 a unidade.",
+  priceBulk: "A partir de 5 unidades: R$ 35,00 cada.",
+  note: "Modelos especiais (como canecas coloridas) podem ter valor diferenciado.",
+  cta: "Orçamento rápido e sem compromisso.",
+} as const;
+
 export const PRODUCTS = {
   title: "Nossos Produtos",
-  description:
-    "Transforme ideias em realidade com nossos produtos personalizados.",
   items: [
     {
       id: 1,
       name: "Canecas Personalizadas",
-      description: "Canecas de alta qualidade com sua arte ou mensagem única.",
+      description: "Ideais para presentes únicos e datas especiais.",
       image: "/images/products/cust.jpg",
     },
     {
       id: 2,
       name: "Canecas Corporativas",
-      description: "Canecas com a logo da sua empresa ou evento.",
+      description: "Fortaleça sua marca com brindes que seus clientes realmente usam.",
       image: "/images/products/corp.jpeg",
     },
     {
       id: 3,
       name: "Canecas Temáticas",
-      description: "Canecas com temas como filmes, séries, jogos, etc.",
+      description: "Perfeitas para fãs de filmes, séries e jogos.",
       image: "/images/products/tem.jpg",
     },
   ],
+  cta: "Solicitar Orçamento Gratuito",
 } as const;
 
 export const TESTIMONIALS = {
-  title: "O que nossos clientes dizem",
+  title: "O Que Nossos Clientes Dizem",
+  subtitle: "Mais de dezenas de clientes satisfeitos na ilha de São Luís.",
   items: [
     {
       id: 1,
@@ -105,6 +173,7 @@ export const TESTIMONIALS = {
       rating: 5,
     },
   ],
+  googleLink: "Veja mais avaliações no Google",
 } as const;
 
 export const LOCATION = {
@@ -138,6 +207,11 @@ export const CONTACT = {
     "https://wa.me/5598920021053?text=Ol%C3%A1!%20Vi%20os%20seus%20produtos%20no%20site%20e%20gostaria%20de%20conhecer%20mais",
 } as const;
 
+export const PRODUCT_VIDEOS = {
+  title: "Ideias que saíram do papel e viraram realidade.",
+  subtitle: "Cada vídeo representa um cliente satisfeito na Grande Ilha.",
+} as const;
+
 export const INSTAGRAM = {
   title: "Conheça mais do nosso trabalho",
   description: "Acompanhe nosso Instagram e confira todos os produtos personalizados que já entregamos aos nossos clientes.",
@@ -145,7 +219,22 @@ export const INSTAGRAM = {
   url: "https://instagram.com/personalize_se.slz",
 } as const;
 
+export const URGENCY = {
+  title: "Urgência Leve",
+  description: "Produzimos sob encomenda.",
+  description2: "Em datas comemorativas nossa agenda costuma lotar rapidamente.",
+  description3: "Quanto antes você aprovar sua arte, mais rápido garantimos sua entrega.",
+} as const;
+
+export const FINAL_CTA = {
+  title: "Sua ideia merece sair do papel hoje.",
+  description: "Receba sua arte gratuita e tenha sua caneca pronta em até 24h.",
+  description2: "Entrega grátis para toda ilha de São Luís.",
+  cta: "Quero meu orçamento gratuito agora",
+} as const;
+
 export const FOOTER = {
+  description: "Canecas personalizadas com qualidade profissional e entrega rápida.",
   copyright: `© ${new Date().getFullYear()} ${
     BRAND.name
   }. Todos os direitos reservados.`,

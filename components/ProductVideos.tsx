@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { PRODUCT_VIDEOS } from "@/lib/constants";
 import SectionTitle from "./UI/SectionTitle";
 
 const VIDEOS = [
@@ -111,8 +112,8 @@ export default function ProductVideos() {
     <section className="py-24 px-6 bg-[#F9F5F0]">
       <div className="container mx-auto max-w-6xl">
         <SectionTitle
-          title="Nossas últimas entregas"
-          subtitle="Alguns dos pedidos dos nossos clientes que transformamos em realidade"
+          title={PRODUCT_VIDEOS.title}
+          subtitle={PRODUCT_VIDEOS.subtitle}
         />
 
         <div className="relative mt-12">

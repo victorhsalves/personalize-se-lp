@@ -25,7 +25,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="py-24 px-6 bg-white">
       <div className="container mx-auto max-w-6xl">
-        <SectionTitle title={TESTIMONIALS.title} />
+        <SectionTitle title={TESTIMONIALS.title} subtitle={TESTIMONIALS.subtitle} />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {TESTIMONIALS.items.map((testimonial, index) => (
@@ -69,7 +69,7 @@ export default function Testimonials() {
             onClick={handleGoogleStoreClick}
             className="inline-flex items-center gap-2 text-[#C97A65] hover:text-[#A66B5B] font-medium transition-colors duration-200 underline underline-offset-4 hover:underline-offset-2"
           >
-            Veja mais feedbacks e informações da nossa loja no Google
+            {TESTIMONIALS.googleLink}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"

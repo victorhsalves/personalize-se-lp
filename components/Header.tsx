@@ -47,7 +47,7 @@ export default function Header() {
               </motion.div>
             ))}
             <Button href={NAVIGATION.contact} size="sm">
-              Orçamento
+              Orçamento Gratuito
             </Button>
           </div>
 
@@ -93,7 +93,7 @@ export default function Header() {
                 </Link>
               ))}
               <Button href={NAVIGATION.contact} size="sm" className="w-full">
-                Orçamento
+                Orçamento Gratuito
               </Button>
             </div>
           </motion.div>

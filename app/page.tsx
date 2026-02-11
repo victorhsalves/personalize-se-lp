@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import HowItWorks from "@/components/HowItWorks";
+import Quality from "@/components/Quality";
+import Pricing from "@/components/Pricing";
 import ProductGrid from "@/components/ProductGrid";
 import ProductVideos from "@/components/ProductVideos";
-import InstagramCTA from "@/components/InstagramCTA";
 import Testimonials from "@/components/Testimonials";
+import Urgency from "@/components/Urgency";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/SEO/StructuredData";
@@ -43,10 +46,13 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <HowItWorks />
+        <Quality />
+        <Pricing />
         <ProductGrid />
         <ProductVideos />
-        <InstagramCTA />
         <Testimonials />
+        <Urgency />
         <CTA />
       </main>
       <Footer />
